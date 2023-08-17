@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="user-uenerator-v2.0:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/user_uenerator_v2_0_jar</output-path>
+    <root id="archive" name="User-Generator-v2.jar">
+      <element id="module-output" name="User-Generator-v2" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.16.1/jsoup-1.16.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
