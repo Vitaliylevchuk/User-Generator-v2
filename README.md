@@ -2,7 +2,7 @@
 
 > Detailed README coming out on the 20th.
 
-> Russian ver of README coming out on the 21th.
+> Russian ver of README coming out on the 21st.
 
 > LICENSE coming out on the 18th.
 
