@@ -1,10 +1,10 @@
 # User Generator v2
 
-> Detailed README coming out on the 20th.
+> Подробный README.md выйдет к 20му августа.
 
-> Russian ver of README coming out on the 21st.
+> Русский вариант README.md выйдет к 21му августа.
 
 ---
-## Attention! 
+## Внимание! 
 
-> This package is designed to randomly generate instances of human parameters for use in testing any applications/ programs/ packages/ libraries/ etc. All coincidences with real people are purely coincidental and the author is not trying to offend anyone.
+> Эта библиотека создана для случайной генерации человеческих параметров для использования их для тестирования каких либо приложений/ программ/ библиотек/ пакетов/ и тд. Все совпадения с реальными людьми исключительная случайность и автор не пытается унизить или оскорбить кого либо.
