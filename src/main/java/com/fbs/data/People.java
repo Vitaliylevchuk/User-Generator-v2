@@ -4,7 +4,6 @@ public class People {
 
     private String name;
     private String id;
-    private String phoneNumber;
     private String country, city;
 
     public String getName() {
