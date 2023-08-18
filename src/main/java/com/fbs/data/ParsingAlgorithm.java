@@ -24,7 +24,6 @@ public class ParsingAlgorithm {
 
         @Override
         public Elements parsing(@NotNull Document document) {
-            System.out.println(getArgs()[0].getClass());
             return document.select("div.name_heading");
         }
     };
