@@ -4,8 +4,6 @@
 
 > Russian ver of README coming out on the 21st.
 
-> LICENSE coming out on the 18th.
-
 ---
 ## Attention! 
 
