@@ -18,7 +18,7 @@
 
 User Generator v2 _(далее - ug2)_ использует библиотеку Jsoup. Ug2 подключается к сайту [name-generator.org](https://www.name-generator.org.uk/quick/) и берет от туда случайные имя и фамилию, которые генерируются при каждом заходе на сайт. Также есть возможность отдельно взять объект типа Document и/или Elements.
 
-### [Класс Parser](src/main/java/com/fbs/util/Parser)
+### [Класс Parser](src/main/java/com/fbs/util/Parser.java)
 
 
 
