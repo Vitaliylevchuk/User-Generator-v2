@@ -18,8 +18,17 @@ public class Parser {
     public ConnectParameters getConnectParameters() {
         return connectParameters;
     }
+    private ConnectParameters connectParameters = new ConnectParameters();
 
-    public ConnectParameters connectParameters = new ConnectParameters();
+    public int getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
+    }
+
+    private int timeout;
 
     public Parser(Website website){
         parserWebsite = website;
@@ -33,6 +42,7 @@ public class Parser {
         connectParameters.getParameters().add(new ConnectParameter("header", "headerValue0", "headerValue1"));
         connectParameters.getParameters().add(new ConnectParameter("data", "", ""));
         connectParameters.getParameters().add(new ConnectParameter("proxy", ""));
+        timeout = 5000;
     }
 
     public @Nullable Document getDocument() throws IOException {
@@ -43,6 +53,7 @@ public class Parser {
                     .referrer(connectParameters.getByName("referrer").getParameterValue(0).toString())
                     .header(connectParameters.getByName("header").getParameterValue(0).toString(), connectParameters.getByName("header").getParameterValue(1).toString())
                     .data(connectParameters.getByName("data").getParameterValue(0).toString(), connectParameters.getByName("data").getParameterValue(1).toString())
+                    .timeout(timeout)
                     .get();
         }
         catch (ValidationException e){
@@ -51,6 +62,7 @@ public class Parser {
                     .cookie(connectParameters.getByName("cookie").getParameterValue(0).toString(), connectParameters.getByName("cookie").getParameterValue(1).toString())
                     .referrer(connectParameters.getByName("referrer").getParameterValue(0).toString())
                     .header(connectParameters.getByName("header").getParameterValue(0).toString(), connectParameters.getByName("header").getParameterValue(1).toString())
+                    .timeout(timeout)
                     .get();
         }
         catch (Exception e){
@@ -68,6 +80,7 @@ public class Parser {
                     .header(connectParameters.getByName("header").getParameterValue(0).toString(), connectParameters.getByName("header").getParameterValue(1).toString())
                     .data(connectParameters.getByName("data").getParameterValue(0).toString(), connectParameters.getByName("data").getParameterValue(1).toString())
                     .proxy(connectParameters.getByName("proxy").getParameterValue(0).toString(),(int) connectParameters.getByName("proxy").getParameterValue(1))
+                    .timeout(timeout)
                     .get();
         }
         catch (ValidationException e){
@@ -77,6 +90,7 @@ public class Parser {
                     .referrer(connectParameters.getByName("referrer").getParameterValue(0).toString())
                     .header(connectParameters.getByName("header").getParameterValue(0).toString(), connectParameters.getByName("header").getParameterValue(1).toString())
                     .proxy(connectParameters.getByName("proxy").getParameterValue(0).toString(),(int) connectParameters.getByName("proxy").getParameterValue(1))
+                    .timeout(timeout)
                     .get();
         }
         catch (Exception e){

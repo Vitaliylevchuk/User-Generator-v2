@@ -29,6 +29,13 @@ public class ConnectParameter {
         };
     }
 
+    public void setParameterValue(int index, Object value){
+        switch (index) {
+            case 0 -> parameterValue0 = value;
+            case 1 -> parameterValue1 = value;
+        };
+    }
+
     public void setParameterValue(Object value){
         parameterValue0 = value;
     }

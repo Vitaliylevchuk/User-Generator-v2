@@ -13,7 +13,13 @@ public class Main {
 
         Generator generator = new Generator(
                 ParsingAlgorithm.name_generator_orgAlgorithm,
-                new Parser(Website.name_generator_org),
+                new Parser(Website.name_generator_org){
+                    @Override
+                    public void initConnectParameters() {
+                        super.initConnectParameters();
+                        setTimeout(0);
+                    }
+                },
                 false);
         People people = generator.generatePeople(120, 190, 30, 130, 0, 90);
         System.out.println(people);
