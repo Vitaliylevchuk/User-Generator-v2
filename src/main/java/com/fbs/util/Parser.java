@@ -35,6 +35,7 @@ public class Parser {
         initConnectParameters();
     }
 
+    // Set default values for parameters.
     public void initConnectParameters(){
         connectParameters.getParameters().add(new ConnectParameter("userAgent", "Mozilla"));
         connectParameters.getParameters().add(new ConnectParameter("cookie", "cookieValue0", "cookieValue1"));
@@ -45,6 +46,7 @@ public class Parser {
         timeout = 5000;
     }
 
+    // Connect to website, get data from it and return it by Document class variable.
     public @Nullable Document getDocument() throws IOException {
         try {
             return Jsoup.connect(parserWebsite.getSite())
@@ -58,6 +60,7 @@ public class Parser {
         }
         catch (ValidationException e){
             return Jsoup.connect(parserWebsite.getSite())
+                    // Connect without data() method
                     .userAgent(connectParameters.getByName("userAgent").getParameterValue(0).toString())
                     .cookie(connectParameters.getByName("cookie").getParameterValue(0).toString(), connectParameters.getByName("cookie").getParameterValue(1).toString())
                     .referrer(connectParameters.getByName("referrer").getParameterValue(0).toString())
@@ -71,6 +74,7 @@ public class Parser {
         }
     }
 
+    // Connect to website, get data from it and return it by Document class variable. Using edited proxy.
     public @Nullable Document getDocumentUsingProxy() throws IOException {
         try {
             return Jsoup.connect(parserWebsite.getSite())
@@ -85,6 +89,7 @@ public class Parser {
         }
         catch (ValidationException e){
             return Jsoup.connect(parserWebsite.getSite())
+                    // Connect without data() method
                     .userAgent(connectParameters.getByName("userAgent").getParameterValue(0).toString())
                     .cookie(connectParameters.getByName("cookie").getParameterValue(0).toString(), connectParameters.getByName("cookie").getParameterValue(1).toString())
                     .referrer(connectParameters.getByName("referrer").getParameterValue(0).toString())

@@ -26,7 +26,7 @@
 
 ## Принцип
 
-User Generator v2 _(далее - ug2)_ использует библиотеку Jsoup. Ug2 подключается к сайту [name-generator.org](https://www.name-generator.org.uk/quick/) и берет от туда случайные имя и фамилию, которые генерируются при каждом заходе на сайт. Также есть возможность отдельно взять объект типа Document и/или Elements.
+User Generator v2 использует библиотеку Jsoup. [Parser](#класс-parser) подключается к сайту [name-generator.org](https://www.name-generator.org.uk/quick/) и берет от туда случайные имя и фамилию, которые генерируются при каждом заходе на сайт. Также есть возможность отдельно взять объект типа Document и/или Elements.
 
 ### [Класс Parser](src/main/java/com/fbs/util/Parser.java)
 
@@ -43,10 +43,20 @@ Parser parser = new Parser(Website.name_generator_org){
     }
 };
 ```
+Но, параметры имеют свои стандартные параметры:
+
+| Имя параметра | Значение параметра(1) | Значение параметра(2) |
+|---------------|-----------------------|-----------------------|
+| userAgent     | "Mozilla"             | _Не существует_       |
+| cookie        | "cookieValue0"        | "cookieValue1"        |
+| referrer      | "https://google.com"  | _Не существует_       |
+| header        | "headerValue0"        | "headerValue1"        |
+| data          | ""                    | ""                    |
+| proxy         | ""                    | _Не существует_       |
 
 #### [Класс ConnectParameter](src/main/java/com/fbs/data/ConnectParameter.java)
 
-Представляет собой класс с приватными полями типа `Object` _для значений_, и `String` _для имени_.
+Представляет собой класс с приватными полями типа `Object` _для значений параметра_, и `String` _для имени параметра_.
 ```java
 private String parameterName;
 
@@ -55,7 +65,7 @@ private Object parameterValue0, parameterValue1;
 
 В классе имеются методы для получения или установки значений параметра.
 
-Для получения значений параметра:
+Для получения значений параметра в версии 1.0.0:
 ```java
     public String getParameterName(){
         return parameterName;
@@ -70,7 +80,7 @@ private Object parameterValue0, parameterValue1;
     }
 ```
 
-Для установки параметров:
+Для установки параметров в версии 1.0.0:
 
 ```java
     public void setParameterValue(int index, Object value){
@@ -90,6 +100,27 @@ private Object parameterValue0, parameterValue1;
 ```
 
 #### [Класс ConnectParameters](src/main/java/com/fbs/data/ConnectParameters.java)
+
+ConnectParameters является массивом ConnectParameter, который имеет методы для упрощения работы с ним, как с массивом.
+
+В версии 1.0.0 имеет следующие методы:
+
+```java
+public ArrayList<ConnectParameter> getParameters() {
+        return parameters;
+}
+
+public @Nullable ConnectParameter getByName(String parameterName){
+    for (ConnectParameter parameter : parameters){
+        if (Objects.equals(parameter.getParameterName(), parameterName)){
+            return parameter;
+        }
+    }
+    return null;
+}
+```
+
+Метод `getByName(String name)`, принимает имя параметра и среди принадлежащих параметров 
 
 ### Класс ParsingAlgorithm
 

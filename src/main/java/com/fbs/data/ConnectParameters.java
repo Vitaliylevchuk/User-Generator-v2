@@ -13,6 +13,7 @@ public class ConnectParameters {
         return parameters;
     }
 
+    // Gets parameter name, and return parameter with that name. If parameter with that name does not exist - return null
     public @Nullable ConnectParameter getByName(String parameterName){
         for (ConnectParameter parameter : parameters){
             if (Objects.equals(parameter.getParameterName(), parameterName)){
