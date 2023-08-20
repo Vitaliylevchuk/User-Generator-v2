@@ -15,11 +15,25 @@ import java.util.Random;
 
 public class Generator {
 
+    public ParsingAlgorithm getParsingAlgorithm() {
+        return parsingAlgorithm;
+    }
+
     private ParsingAlgorithm parsingAlgorithm;
     private Parser parser;
     private boolean parseWithEditedProxy;
 
     private Document document;
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public Elements getElements() {
+        return elements;
+    }
+
+    private Elements elements;
 
     public Generator(@NotNull ParsingAlgorithm parsingAlgorithm, @NotNull Parser parser, boolean parseWithEditedProxy) throws IOException {
         this.parsingAlgorithm = parsingAlgorithm;
@@ -27,6 +41,7 @@ public class Generator {
         this.parseWithEditedProxy = parseWithEditedProxy;
 
         document = generateDocument();
+        elements = generateElement(document);
 
     }
 
@@ -35,12 +50,11 @@ public class Generator {
         int weight = weightMin + new Random().nextInt(weightMax - weightMin);
         int age = ageMin + new Random().nextInt(ageMax - ageMin);
 
-        Elements els = generateElement(document);
         try {
-            return new People(Objects.requireNonNull(els.get((Integer) parsingAlgorithm.getArgs()[0])).text(), age, height, weight);
+            return new People(Objects.requireNonNull(elements.get((Integer) parsingAlgorithm.getArgs()[0])).text(), age, height, weight);
         }
         catch (NullPointerException e){
-            return new People(Objects.requireNonNull(els.get(0)).text(), age, height, weight);
+            return new People(Objects.requireNonNull(elements.get(0)).text(), age, height, weight);
         }
     }
 

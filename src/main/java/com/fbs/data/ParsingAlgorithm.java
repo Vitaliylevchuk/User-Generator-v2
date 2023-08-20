@@ -4,16 +4,23 @@ import org.jetbrains.annotations.NotNull;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 public class ParsingAlgorithm {
 
-    private Object[] args;
+    private Object[] args = new Object[4];
 
     public Elements parsing(Document document){
         return null;
     }
 
-    public void setArgs(Object ... args){
-        this.args = args;
+    public void setArg(int index, Object arg){
+        try {
+            args[index] = arg;
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
     }
 
     public Object[] getArgs() {

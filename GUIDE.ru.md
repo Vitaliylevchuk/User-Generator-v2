@@ -1,32 +1,14 @@
 # User Generator v2
 
-> English version will be available by August 21st.
+> English version of GUIDE.md will be available by August 25th.
 
-- [Главная](#user-generator-v2)
-  - [Пример, краткое описание](#пример)
-  - [Принцип](#принцип)
+- [Принцип](#принцип)
     - [Parser](#класс-parser)
-      - [ConnectParameter](#класс-connectparameter)
-      - [ConnectParameters](#класс-connectparameters)
+        - [ConnectParameter](#класс-connectparameter)
+        - [ConnectParameters](#класс-connectparameters)
     - [ParsingAlgorithm](#класс-parsingalgorithm)
     - [Generator](#класс-generator)
     - [People](#класс-people)
-  - [Будущие обновления](#будущие-обновления)
-  - [Релизы](#релизы)
-  - [Внимание](#внимание)
-  - [Благодарности](#благодарности)
-
-Библиотека "User Generator" - это библиотека для создания объектов класса People хранящие в себе различную информацию, она создана для тестирования различных приложений/ программ/ библиотек/ пакетов/ и тд.
-
-## Пример
-
-![](img/example.png)
-
-Выше приведен пример использования, на нем объект Generator возвращает значение типа People, хранящее в себе случайную информацию. Весь выше-написанный код будет объяснен ниже.
-
-## Принцип
-
-User Generator v2 использует библиотеку Jsoup. [Parser](#класс-parser) подключается к сайту [name-generator.org](https://www.name-generator.org.uk/quick/) и берет от туда случайные имя и фамилию, которые генерируются при каждом заходе на сайт. Также есть возможность отдельно взять объект типа Document и/или Elements.
 
 ### [Класс Parser](src/main/java/com/fbs/util/Parser.java)
 
@@ -120,7 +102,7 @@ public @Nullable ConnectParameter getByName(String parameterName){
 }
 ```
 
-Метод `getByName(String name)`, принимает имя параметра и среди принадлежащих параметров 
+Метод `getByName(String name)`, принимает имя параметра и среди принадлежащих параметров
 
 ### Класс ParsingAlgorithm
 
@@ -129,17 +111,3 @@ public @Nullable ConnectParameter getByName(String parameterName){
 ### Класс People
 
 ### Класс Website
-
-## Будущие обновления
-
-## Релизы
-
-## Внимание
-
-> Эта библиотека создана для случайной генерации человеческих параметров для использования их для тестирования каких либо приложений/ программ/ библиотек/ пакетов/ и тд. Все совпадения с реальными людьми исключительная случайность и автор не пытается унизить или оскорбить кого либо.
-
-## Благодарности
-
-+ [Jsoup](https://github.com/jhy/jsoup)
-+ [name-generator.org](https://www.name-generator.org.uk/quick/)
-+ [JetBrains за аннотации](https://github.com/JetBrains/java-annotations)

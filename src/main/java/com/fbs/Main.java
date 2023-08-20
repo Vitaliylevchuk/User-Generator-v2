@@ -21,8 +21,16 @@ public class Main {
                     }
                 },
                 false);
-        People people = generator.generatePeople(120, 190, 30, 130, 0, 90);
-        System.out.println(people);
+        People[] peoples = new People[5];
+        for (int i = 0; i < peoples.length; i++) {
+            peoples[i] = generator.generatePeople(120, 190, 30, 150, 0, 90);
+            generator.getParsingAlgorithm().setArg(0, i);
+        }
+
+        for (People people : peoples) {
+            System.out.println(people);
+        }
+
     }
 
 }
