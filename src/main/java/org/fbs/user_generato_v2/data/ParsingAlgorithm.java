@@ -1,10 +1,8 @@
-package com.fbs.data;
+package org.fbs.user_generato_v2.data;
 
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-
-import java.util.ArrayList;
 
 public class ParsingAlgorithm {
 

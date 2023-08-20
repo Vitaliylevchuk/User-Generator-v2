@@ -1,9 +1,10 @@
-package com.fbs;
+package org.fbs.user_generato_v2;
 
-import com.fbs.data.ParsingAlgorithm;
-import com.fbs.data.People;
-import com.fbs.data.Website;
-import com.fbs.util.Parser;
+import org.fbs.user_generato_v2.data.ParsingAlgorithm;
+import org.fbs.user_generato_v2.data.Website;
+import org.fbs.user_generato_v2.util.Parser;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
@@ -21,16 +22,7 @@ public class Main {
                     }
                 },
                 false);
-        People[] peoples = new People[5];
-        for (int i = 0; i < peoples.length; i++) {
-            peoples[i] = generator.generatePeople(120, 190, 30, 150, 0, 90);
-            generator.getParsingAlgorithm().setArg(0, i);
-        }
-
-        for (People people : peoples) {
-            System.out.println(people);
-        }
-
+        System.out.println(generator.generatePeople(0, 1, 0, 1, 0, 1));
     }
 
 }

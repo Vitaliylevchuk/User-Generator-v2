@@ -25,9 +25,11 @@ Generator generator = new Generator(
                 super.initConnectParameters();
                 setTimeout(0);
             }
-            },
+        },
         false);
+
 People[] peoples = new People[5];
+
 for (int i = 0; i < peoples.length; i++) {
     peoples[i] = generator.generatePeople(120, 190, 30, 150, 0, 90);
     generator.getParsingAlgorithm().setArg(0, i);
@@ -38,9 +40,38 @@ for (People people : peoples) {
 }
 ```
 
+Благодаря структуре проекта у пользователя есть возможность использовать свой сайт, а также извлекать из него то что пользователь считает нужным.
+
+```java
+Website myWebsite = new Website("https://example.com");
+
+ParsingAlgorithm myParsingAlgorithm = new ParsingAlgorithm(){
+    @Override
+    public Elements parsing(Document document) {
+        return document.select("div.data-header");
+    }
+};
+
+Parser myParser = new Parser(myWebsite){
+    @Override 
+    public void initConnectParameters() {
+        super.initConnectParameters();
+        setTimeout(0);
+    }
+};
+        
+Generator generator = new Generator(myParsingAlgorithm, myParser, false);
+```
+
 ## Будущие обновления
 
+Предложения для будущих обновлений можно предложить в:
++ [Telegram](https://t.me/garageregereguru)
++ [GitHub issues](https://github.com/Vitaliylevchuk/User-Generator-v2/issues)
+
 ## Релизы
+
+> Пока нет ни одного релиза.
 
 ## Внимание
 

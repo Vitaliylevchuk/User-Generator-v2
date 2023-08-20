@@ -1,4 +1,4 @@
-package com.fbs.data;
+package org.fbs.user_generato_v2.data;
 
 public class People {
 

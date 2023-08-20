@@ -10,7 +10,7 @@
     - [Generator](#класс-generator)
     - [People](#класс-people)
 
-### [Класс Parser](src/main/java/com/fbs/util/Parser.java)
+### [Класс Parser](src/main/java/org/fbs/user_generato_v2/user_generato_v2/util/Parser.java)
 
 Служит для извлечения информации с сайта и дальнейшего его возвращения кав объекта типа Document. Для настройки функции `connect()` используется классы типа [ConnectParameter](#класс-connectparameter), и [ConnectParameters](#класс-connectparameters), исключение `timeout` имеющее тип `int`. В классе имеются два метода: `getDocument()` и `getDocumentUsingProxy()`, отличие заключается в том, что в методе `getDocumentUsingProxy()` вместе с другими параметрами передается параметр **proxy** с помощью метода `proxy()`.
 
@@ -36,7 +36,7 @@ Parser parser = new Parser(Website.name_generator_org){
 | data          | ""                    | ""                    |
 | proxy         | ""                    | _Не существует_       |
 
-#### [Класс ConnectParameter](src/main/java/com/fbs/data/ConnectParameter.java)
+#### [Класс ConnectParameter](src/main/java/org/fbs/user_generato_v2/user_generato_v2/data/ConnectParameter.java)
 
 Представляет собой класс с приватными полями типа `Object` _для значений параметра_, и `String` _для имени параметра_.
 ```java
@@ -81,7 +81,7 @@ private Object parameterValue0, parameterValue1;
     }
 ```
 
-#### [Класс ConnectParameters](src/main/java/com/fbs/data/ConnectParameters.java)
+#### [Класс ConnectParameters](src/main/java/org/fbs/user_generato_v2/user_generato_v2/data/ConnectParameters.java)
 
 ConnectParameters является массивом ConnectParameter, который имеет методы для упрощения работы с ним, как с массивом.
 
