@@ -1,8 +1,8 @@
-package org.fbs.user_generato_v2;
+package org.fbs.user_generator_v2;
 
-import org.fbs.user_generato_v2.data.ParsingAlgorithm;
-import org.fbs.user_generato_v2.data.People;
-import org.fbs.user_generato_v2.util.Parser;
+import org.fbs.user_generator_v2.data.ParsingAlgorithm;
+import org.fbs.user_generator_v2.data.People;
+import org.fbs.user_generator_v2.util.Parser;
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

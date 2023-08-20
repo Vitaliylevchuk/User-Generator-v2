@@ -1,10 +1,8 @@
-package org.fbs.user_generato_v2;
+package org.fbs.user_generator_v2;
 
-import org.fbs.user_generato_v2.data.ParsingAlgorithm;
-import org.fbs.user_generato_v2.data.Website;
-import org.fbs.user_generato_v2.util.Parser;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import org.fbs.user_generator_v2.data.ParsingAlgorithm;
+import org.fbs.user_generator_v2.data.Website;
+import org.fbs.user_generator_v2.util.Parser;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package org.fbs.user_generato_v2.data;
+package org.fbs.user_generator_v2.data;
 
 public class Website {
 

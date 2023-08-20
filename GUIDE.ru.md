@@ -2,15 +2,14 @@
 
 > English version of GUIDE.md will be available by August 25th.
 
-- [Принцип](#принцип)
-    - [Parser](#класс-parser)
-        - [ConnectParameter](#класс-connectparameter)
-        - [ConnectParameters](#класс-connectparameters)
-    - [ParsingAlgorithm](#класс-parsingalgorithm)
-    - [Generator](#класс-generator)
-    - [People](#класс-people)
+- [Parser](#класс-parser)
+    - [ConnectParameter](#класс-connectparameter)
+    - [ConnectParameters](#класс-connectparameters)
+- [ParsingAlgorithm](#класс-parsingalgorithm)
+- [Generator](#класс-generator)
+- [People](#класс-people)
 
-### [Класс Parser](src/main/java/org/fbs/user_generato_v2/user_generato_v2/util/Parser.java)
+### [Класс Parser](src/main/java/org/fbs/user_generator_v2/util/Parser.java)
 
 Служит для извлечения информации с сайта и дальнейшего его возвращения кав объекта типа Document. Для настройки функции `connect()` используется классы типа [ConnectParameter](#класс-connectparameter), и [ConnectParameters](#класс-connectparameters), исключение `timeout` имеющее тип `int`. В классе имеются два метода: `getDocument()` и `getDocumentUsingProxy()`, отличие заключается в том, что в методе `getDocumentUsingProxy()` вместе с другими параметрами передается параметр **proxy** с помощью метода `proxy()`.
 
@@ -36,7 +35,7 @@ Parser parser = new Parser(Website.name_generator_org){
 | data          | ""                    | ""                    |
 | proxy         | ""                    | _Не существует_       |
 
-#### [Класс ConnectParameter](src/main/java/org/fbs/user_generato_v2/user_generato_v2/data/ConnectParameter.java)
+#### [Класс ConnectParameter](src/main/java/org/fbs/user_generator_v2/data/ConnectParameter.java)
 
 Представляет собой класс с приватными полями типа `Object` _для значений параметра_, и `String` _для имени параметра_.
 ```java
@@ -81,9 +80,9 @@ private Object parameterValue0, parameterValue1;
     }
 ```
 
-#### [Класс ConnectParameters](src/main/java/org/fbs/user_generato_v2/user_generato_v2/data/ConnectParameters.java)
+#### [Класс ConnectParameters](src/main/java/org/fbs/user_generator_v2/data/ConnectParameters.java)
 
-ConnectParameters является массивом ConnectParameter, который имеет методы для упрощения работы с ним, как с массивом.
+ConnectParameters является массивом [ConnectParameter](#класс-connectparameter), который имеет методы для упрощения работы с ним, как с массивом.
 
 В версии 1.0.0 имеет следующие методы:
 
@@ -102,12 +101,12 @@ public @Nullable ConnectParameter getByName(String parameterName){
 }
 ```
 
-Метод `getByName(String name)`, принимает имя параметра и среди принадлежащих параметров
+Метод `getByName(String name)`, принимает имя параметра и среди принадлежащих ему параметров ищет и возвращает его как объект класса [ConnectionParameter](#класс-connectparameter).
 
-### Класс ParsingAlgorithm
+### [Класс ParsingAlgorithm](/src/main/java/org/fbs/user_generator_v2/data/ParsingAlgorithm.java)
 
-### Класс Generator
+### [Класс Generator](/src/main/java/org/fbs/user_generator_v2/Generator.java)
 
-### Класс People
+### [Класс People](/src/main/java/org/fbs/user_generator_v2/data/People.java)
 
-### Класс Website
+### [Класс Website](/src/main/java/org/fbs/user_generator_v2/data/Website.java)

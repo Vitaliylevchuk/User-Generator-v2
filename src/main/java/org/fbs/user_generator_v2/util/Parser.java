@@ -1,8 +1,8 @@
-package org.fbs.user_generato_v2.util;
+package org.fbs.user_generator_v2.util;
 
-import org.fbs.user_generato_v2.data.ConnectParameter;
-import org.fbs.user_generato_v2.data.ConnectParameters;
-import org.fbs.user_generato_v2.data.Website;
+import org.fbs.user_generator_v2.data.ConnectParameter;
+import org.fbs.user_generator_v2.data.ConnectParameters;
+import org.fbs.user_generator_v2.data.Website;
 import org.jetbrains.annotations.Nullable;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.ValidationException;
