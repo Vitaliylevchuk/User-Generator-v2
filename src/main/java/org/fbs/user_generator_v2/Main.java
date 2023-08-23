@@ -20,7 +20,7 @@ public class Main {
                     }
                 },
                 false);
-        System.out.println(generator.generatePeople(0, 1, 0, 1, 0, 1));
+        System.out.println(generator.generatePeople(0, 1, 0, 1, 0, 1).getId());
     }
 
 }

@@ -4,7 +4,7 @@ public class People {
 
     private String name;
     private String id;
-    private String country, city;
+    private int age, height, weight;
 
     public String getName() {
         return name;
@@ -21,14 +21,16 @@ public class People {
     public int getWeight() {
         return weight;
     }
+    public String getId() {
+        return id;
+    }
 
-    private int age, height, weight;
-
-    public People(String name, int age, int height, int weight){
+    public People(String name, int age, int height, int weight, String id){
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
+        this.id = id;
     }
 
     @Override

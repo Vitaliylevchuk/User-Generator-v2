@@ -1,1 +1,1 @@
-> English version of README.md will be available by August 25th.
+> English version of README.md will be available by August 30th.

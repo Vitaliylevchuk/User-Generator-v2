@@ -44,16 +44,39 @@ public class Generator {
     }
 
     public People generatePeople(int heightMin, int heightMax, int weightMin, int weightMax, int ageMin, int ageMax) throws IOException {
-        int height = heightMin + new Random().nextInt(heightMax - heightMin);
-        int weight = weightMin + new Random().nextInt(weightMax - weightMin);
-        int age = ageMin + new Random().nextInt(ageMax - ageMin);
+        int height;
+        int weight;
+        int age;
+        int index;
 
         try {
-            return new People(Objects.requireNonNull(elements.get((Integer) parsingAlgorithm.getArgs()[0])).text(), age, height, weight);
+            index = (Integer) parsingAlgorithm.getArgs()[0];
+        }catch (NullPointerException e){
+            index = 0;
         }
-        catch (NullPointerException e){
-            return new People(Objects.requireNonNull(elements.get(0)).text(), age, height, weight);
+
+        try {
+            age = (Integer) parsingAlgorithm.getArgs()[1];
+        }catch (NullPointerException e){
+            age = ageMin + new Random().nextInt(ageMax - ageMin);
         }
+
+        try{
+            weight = (Integer) parsingAlgorithm.getArgs()[2];
+        }catch (NullPointerException e){
+            weight = weightMin + new Random().nextInt(weightMax - weightMin);
+        }
+
+        try{
+            height = (Integer) parsingAlgorithm.getArgs()[3];
+        }catch (NullPointerException e){
+            height = heightMin + new Random().nextInt(heightMax - heightMin);
+        }
+
+        String id = String.valueOf(("" + height + weight + age).hashCode()) + elements.get(index).text().replaceAll(" ", "").toLowerCase();
+
+        return new People(Objects.requireNonNull(elements.get(index)).text(), age, height, weight, id);
+
     }
 
     public Document generateDocument() throws IOException {
