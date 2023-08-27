@@ -1,7 +1,5 @@
 # User Generator v2
 
-> English version of README.md will be available by August 30th.
-
 - [Главная](#user-generator-v2)
   - [Пример, краткое описание](#пример)
   - [Руководство](#руководство)

@@ -1,1 +1,0 @@
-> English version of GUIDE.md will be available by August 30th.

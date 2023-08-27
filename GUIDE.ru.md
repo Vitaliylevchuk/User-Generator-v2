@@ -1,7 +1,5 @@
 # User Generator v2
 
-> English version of GUIDE.md will be available by August 30th.
-
 - [Parser](#класс-parser)
     - [ConnectParameter](#класс-connectparameter)
     - [ConnectParameters](#класс-connectparameters)
@@ -105,7 +103,7 @@ public @Nullable ConnectParameter getByName(String parameterName){
 
 ### [Класс ParsingAlgorithm](/src/main/java/org/fbs/user_generator_v2/data/ParsingAlgorithm.java)
 
-Имеет внутри только один основной метод, возвращающий значение типа Elements, который по стандарту возвращает null
+Имеет внутри только один основной метод, возвращающий значение типа Elements, стандартная реализация которого возвращает null
 ```java
 public Elements parsing(Document document){
     return null;
