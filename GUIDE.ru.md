@@ -112,6 +112,56 @@ public Elements parsing(Document document){
 
 ### [Класс Generator](/src/main/java/org/fbs/user_generator_v2/Generator.java)
 
+Метод `generatePeople()` возвращает значение типа People при этом принимает значения макс./мин. возраст, макс./мин. рост макс./мин. вес.
+
+```java
+public People generatePeople(int heightMin, int heightMax, int weightMin, int weightMax, int ageMin, int ageMax) throws IOException {
+    int height;
+    int weight;
+    int age;
+    int index;
+
+    try {
+        index = (Integer) parsingAlgorithm.getArgs()[0];
+    }catch (NullPointerException e){
+        index = 0;
+    }
+
+    try {
+        age = (Integer) parsingAlgorithm.getArgs()[1];
+    }catch (NullPointerException e){
+        age = ageMin + new Random().nextInt(ageMax - ageMin);
+    }
+
+    try{
+        weight = (Integer) parsingAlgorithm.getArgs()[2];
+    }catch (NullPointerException e){
+        weight = weightMin + new Random().nextInt(weightMax - weightMin);
+    }
+
+    try{
+        height = (Integer) parsingAlgorithm.getArgs()[3];
+    }catch (NullPointerException e){
+        height = heightMin + new Random().nextInt(heightMax - heightMin);
+    }
+
+    String id = String.valueOf(("" + height + weight + age).hashCode()) + elements.get(index).text().replaceAll(" ", "").toLowerCase();
+
+    return new People(Objects.requireNonNull(elements.get(index)).text(), age, height, weight, id);
+
+}
+```
+
+Так же параметры берутся из аргументов из ParsingAlgorithm переменной:
+
+| Имя переменной | Индекс аргумента | Стандартное значение                           | Описание                                  |
+|----------------|------------------|------------------------------------------------|-------------------------------------------|
+| height         | 3                | Случайное значение между heightMin и heightMax | Переменная height выводного класса People |
+| weight         | 2                | Случайное значение между weightMin и weightMax | Переменная weight выводного класса People |
+| age            | 1                | Случайное значение между ageMin и ageMax       | Переменная age выводного класса People    |
+| index          | 0                | 0                                              | Индекс имени                              |
+
+
 ### [Класс People](/src/main/java/org/fbs/user_generator_v2/data/People.java)
 
 ### [Класс Website](/src/main/java/org/fbs/user_generator_v2/data/Website.java)
